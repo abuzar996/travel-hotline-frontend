@@ -5,3 +5,8 @@ export interface ItemType {
   icon: React.ReactNode;
   route: string;
 }
+
+export interface ImageViewType {
+  value: string;
+  id: string;
+}

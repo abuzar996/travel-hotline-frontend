@@ -1,11 +1,10 @@
 import { useRef, useLayoutEffect, useState } from "react";
-import { Flex, theme } from "antd";
+import { Flex } from "antd";
 import { Outlet } from "react-router-dom";
 import Navbar from "src/components/nav";
 import Config from "src/components/config";
 
 const AppLayout = () => {
-  const { token } = theme.useToken();
   const headerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number>(0);
 
@@ -24,7 +23,7 @@ const AppLayout = () => {
         {height !== 0 && (
           <div
             style={{
-              padding: token.paddingXS,
+              //padding: token.paddingXS,
               minHeight: `calc(100vh - ${height}px)`,
               backgroundColor: "#fff",
               overflowY: "auto",

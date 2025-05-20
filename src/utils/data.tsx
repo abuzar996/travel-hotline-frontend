@@ -1,10 +1,14 @@
-import type { ItemType } from "./types";
+import type { ImageViewType, ItemType } from "./types";
 import {
   HomeOutlined,
   HistoryOutlined,
   TeamOutlined,
   GlobalOutlined,
 } from "@ant-design/icons";
+import HomeImage1 from "src/assets/home-4.png";
+import HomeImage2 from "src/assets/home-3.png";
+import HomeImage3 from "src/assets/home-2.png";
+import HomeImage4 from "src/assets/home-1.png";
 export const navItems: ItemType[] = [
   {
     label: "HOME",
@@ -34,4 +38,11 @@ export const navItems: ItemType[] = [
     icon: <TeamOutlined />,
     route: "/about-us",
   },
+];
+
+export const homeData: ImageViewType[] = [
+  { value: HomeImage1, id: "1" },
+  { value: HomeImage2, id: "2" },
+  { value: HomeImage3, id: "3" },
+  { value: HomeImage4, id: "4" },
 ];

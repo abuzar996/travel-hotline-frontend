@@ -62,7 +62,11 @@ const Navbar = () => {
         <Image src={Logo} width={60} height={50} />
         <Flex flex={"1"} justify="center" gap={40} className="max-sm:hidden">
           {menuItems.map((item) => (
-            <NavItem {...item} handleItemSelect={handleItemSelect} />
+            <NavItem
+              {...item}
+              handleItemSelect={handleItemSelect}
+              key={item.id}
+            />
           ))}
         </Flex>
         <Flex className="sm:hidden" align="center">

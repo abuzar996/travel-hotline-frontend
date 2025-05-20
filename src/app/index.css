@@ -21,3 +21,12 @@ body::-webkit-scrollbar {
     scrollbar-width: none; /* Firefox */
   }
 }
+.ant-input-affix-wrapper .ant-input-suffix {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+.ant-input-group-addon {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
