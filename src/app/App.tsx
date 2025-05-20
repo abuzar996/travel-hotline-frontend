@@ -1,8 +1,9 @@
 import "./App.css";
-// import { Button } from "antd";
+import "@fontsource/poppins/index.css";
 
+import AppLayout from "src/layout/app-layout";
 function App() {
-  return <>{/* <Button type="primary">Hello</Button> */}</>;
+  return <AppLayout />;
 }
 
 export default App;
