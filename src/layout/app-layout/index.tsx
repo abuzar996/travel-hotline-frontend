@@ -3,6 +3,7 @@ import { Flex } from "antd";
 import { Outlet } from "react-router-dom";
 import Navbar from "src/components/nav";
 import Config from "src/components/config";
+import TripCard from "src/components/cards/trip-card";
 
 const AppLayout = () => {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -31,7 +32,10 @@ const AppLayout = () => {
             }}
             className="scroll-hidden"
           >
-            <Outlet />
+            {/* <Outlet /> */}
+            <div style={{ height: 300, width: 450 }}>
+              <TripCard />
+            </div>
           </div>
         )}
       </Flex>

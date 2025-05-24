@@ -1,6 +1,5 @@
 import { Flex, Image, theme, Typography } from "antd";
 import type { FC } from "react";
-
 interface CardProps {
   image: string;
   description: string;
@@ -17,23 +16,27 @@ const Card: FC<CardProps> = ({
   return (
     <Flex
       style={{
-        width: "45%",
+        //width: "45%",
         borderRadius: token.borderRadiusLG * 2,
         padding: token.paddingMD,
         backgroundColor: backgroundColor, //,
       }}
       align="center"
+      className="sm:w-[45%] max-sm:w-[90%] sm:max-md:w-[70%] max-sm:flex-col-reverse max-sm:items-center"
     >
-      <Flex flex={"1"} vertical>
+      <Flex flex={"1"} vertical className="max-sm:items-center">
         <Typography.Text style={{ fontSize: token.fontSizeHeading2 }}>
           {label}
         </Typography.Text>
-        <Typography.Text style={{ fontSize: token.fontSizeHeading5 }}>
+        <Typography.Text
+          style={{ fontSize: token.fontSizeHeading5 }}
+          className="max-sm:text-center"
+        >
           {description}
         </Typography.Text>
       </Flex>
-      <Flex>
-        <Image src={image} />
+      <Flex className="max-sm:justify-center max-sm:w-[100%]">
+        <Image src={image} style={{ height: 70, width: 70 }} preview={false} />
       </Flex>
     </Flex>
   );
