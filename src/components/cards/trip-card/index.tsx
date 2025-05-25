@@ -1,29 +1,33 @@
 import { Flex, theme, Image, Typography } from "antd";
-
-import Home from "src/assets/home-1.png";
 import Location from "src/assets/Location-Pin.png";
-
-import Stay from "src/assets/vectors/stay.svg";
-import Car from "src/assets/vectors/car.svg";
-import Flag from "src/assets/vectors/flag.svg";
-import Restaurant from "src/assets/vectors/restaurant.svg";
-import Flight from "src/assets/vectors/flight.svg";
-const vectors: string[] = [Flight, Stay, Car, Flag, Restaurant];
-const TripCard = () => {
+import { vectors } from "./constant";
+import { useCallback, type FC } from "react";
+import type { TripItem } from "src/utils/types";
+const TripCard: FC<TripItem & { onClick: (id: string) => void }> = ({
+  place,
+  price,
+  image,
+  id,
+  onClick,
+}) => {
   const { token } = theme.useToken();
+
+  const handleItemClick = useCallback(() => {
+    onClick(id);
+  }, [id]);
   return (
     <Flex
       flex={1}
       style={{
-        //  background: "yellow",
         height: "100%",
         borderRadius: token.borderRadiusLG * 2,
         padding: token.paddingLG,
-        backgroundImage: `url(${Home})`,
+        backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
       align="end"
+      onClick={handleItemClick}
     >
       <Flex
         flex={1}
@@ -46,14 +50,16 @@ const TripCard = () => {
                 fontSize: token.fontSizeHeading5,
               }}
             >
-              Thailand
+              {place}
             </Typography>
             <Typography
               style={{
                 fontSize: token.fontSizeHeading5,
               }}
             >
-              <span style={{ fontWeight: token.fontWeightStrong }}>$769</span>
+              <span style={{ fontWeight: token.fontWeightStrong }}>
+                ${price}
+              </span>
               /person
             </Typography>
           </Flex>
