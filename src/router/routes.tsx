@@ -7,7 +7,7 @@ import Loader from "src/components/loader";
 const Home = lazy(() => import("src/pages/home"));
 const About = lazy(() => import("src/pages/about"));
 const History = lazy(() => import("src/pages/history"));
-const BuildTrip = lazy(() => import("src/pages/build-trip"));
+// const BuildTrip = lazy(() => import("src/pages/build-trip"));
 const Discover = lazy(() => import("src/pages/discover"));
 const TripInfo = lazy(() => import("src/pages/trip-info"));
 export const routes: RouteObject[] = [
@@ -39,7 +39,7 @@ export const routes: RouteObject[] = [
         errorElement: <ErrorElement />,
         element: (
           <Suspense fallback={<Loader />}>
-            <BuildTrip />
+            <Discover />
           </Suspense>
         ),
       },
