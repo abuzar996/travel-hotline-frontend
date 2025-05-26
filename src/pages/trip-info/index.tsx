@@ -2,6 +2,7 @@ import { Flex, theme, Typography } from "antd";
 import TripOverviewCard from "src/components/cards/trip-overview";
 import Footer from "src/components/footer";
 import OptionSelector from "src/components/option-selector";
+import TripEssentials from "src/components/trip-essentials";
 // import { useParams } from "react-router-dom";
 
 const TripInfo = () => {
@@ -20,6 +21,7 @@ const TripInfo = () => {
         <Typography.Text style={{ fontSize: token.fontSizeHeading3 }}>
           Recommended for you
         </Typography.Text>
+        <TripEssentials />
       </Flex>
       <Footer />
     </Flex>
