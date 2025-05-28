@@ -7,6 +7,7 @@ import TripBanner from "src/components/banners/trip-banner";
 import Discovery from "src/components/discovery";
 import Footer from "src/components/footer";
 import { tripData } from "src/utils/data";
+
 const Discover: React.FC = () => {
   const { token } = theme.useToken();
   return (

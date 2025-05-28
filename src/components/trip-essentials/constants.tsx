@@ -1,5 +1,5 @@
 import { Requirements, type TripRequirements } from "src/utils/types";
-import type { TripEssentialType } from "src/utils/types";
+import type { ItemSelectorCardType, TripEssentialType } from "src/utils/types";
 import { StarIcon } from "lucide-react";
 import { Image } from "antd";
 import Excursion from "src/assets/excursion.png";
@@ -22,6 +22,8 @@ import Doors from "src/assets/vectors/doors.svg";
 import Users from "src/assets/vectors/users.svg";
 import Flight from "src/assets/flight.png";
 import Plane from "src/assets/vectors/plane.svg";
+import CarLg from "src/assets/vectors/car-lg.svg";
+import FlightLG from "src/assets/vectors/flight-lg.svg";
 export const sidebarData: TripRequirements[] = [
   {
     id: "1",
@@ -52,56 +54,7 @@ export const sidebarData: TripRequirements[] = [
 
 export const tripData: TripEssentialType[] = [
   {
-    id: "1",
-    type: Requirements.STAY,
-    label: "Radisson Hotel",
-    price: "$250/",
-    offers: [
-      {
-        id: "11",
-        label: "Parking",
-        value: "Free",
-        icon: <Image src={CarVector} />,
-      },
-      {
-        id: "12",
-        label: "Breakfast",
-        value: "Included",
-        icon: <Image src={Breakfast} />,
-      },
-      {
-        id: "13",
-        label: "Fee Cancelation",
-        value: "24h",
-        icon: <Image src={Cancel} />,
-      },
-      {
-        id: "14",
-        label: "Pets",
-        value: "$250 Deposit",
-        icon: <Image src={Dog} />,
-      },
-    ],
-    image: Hotel,
-    stats: [
-      {
-        id: "1",
-        label: "4.8/5",
-        icon: <StarIcon size={18} fill="#FFDA67" color="#FFDA67" />,
-      },
-      {
-        id: "2",
-        label: "Hotel",
-        icon: <Image src={HotelVector} />,
-      },
-      {
-        id: "3",
-        label: "12 km from you",
-        icon: <Image src={Location} />,
-      },
-    ],
-  },
-  {
+    headLabel: "Flight  - Thursday, Sept 5",
     id: "2",
     type: Requirements.FLIGHT,
     label: "Air India",
@@ -157,73 +110,7 @@ export const tripData: TripEssentialType[] = [
     ],
   },
   {
-    id: "3",
-    type: Requirements.EXCURSIONS,
-    label: "Radisson Hotel",
-    price: "$250/",
-    offers: [
-      {
-        id: "11",
-        label: "Duration",
-        value: "7hrs",
-        icon: <Image src={Clock} />,
-      },
-      {
-        id: "12",
-        label: "Main Element",
-        value: "Air",
-        icon: <Image src={Element} />,
-      },
-      {
-        id: "13",
-        label: "Free Cancelation",
-        value: "24h",
-        icon: <Image src={Dot} />,
-      },
-    ],
-    image: Excursion,
-    stats: [
-      {
-        id: "1",
-        label: "4.8/5",
-        icon: <StarIcon size={18} fill="#FFDA67" color="#FFDA67" />,
-      },
-    ],
-  },
-  {
-    id: "4",
-    type: Requirements.RESTAURANTS,
-    label: "Radisson Hotel",
-    price: "$250/",
-    offers: [
-      {
-        id: "41",
-        label: "Reservations",
-        value: "Yes",
-        icon: <Image src={Reservation} />,
-      },
-      {
-        id: "42",
-        label: "Walk-in",
-        value: "Yes",
-        icon: <Image src={Walking} />,
-      },
-    ],
-    image: Restaurant,
-    stats: [
-      {
-        id: "1",
-        label: "4.8/5",
-        icon: <StarIcon size={18} fill="#FFDA67" color="#FFDA67" />,
-      },
-      {
-        id: "2",
-        label: "24/7",
-        icon: <Image src={Clock} />,
-      },
-    ],
-  },
-  {
+    headLabel: "Cars - 4 days - September 5 - 9",
     id: "5",
     type: Requirements.CAR,
     label: "Radisson Hotel",
@@ -265,5 +152,139 @@ export const tripData: TripEssentialType[] = [
         icon: <Image src={Users} />,
       },
     ],
+  },
+  {
+    headLabel: "Stays - 4 nights - September 5 - 9",
+    id: "1",
+    type: Requirements.STAY,
+    label: "Radisson Hotel",
+    price: "$250/",
+    offers: [
+      {
+        id: "11",
+        label: "Parking",
+        value: "Free",
+        icon: <Image src={CarVector} />,
+      },
+      {
+        id: "12",
+        label: "Breakfast",
+        value: "Included",
+        icon: <Image src={Breakfast} />,
+      },
+      {
+        id: "13",
+        label: "Fee Cancelation",
+        value: "24h",
+        icon: <Image src={Cancel} />,
+      },
+      {
+        id: "14",
+        label: "Pets",
+        value: "$250 Deposit",
+        icon: <Image src={Dog} />,
+      },
+    ],
+    image: Hotel,
+    stats: [
+      {
+        id: "1",
+        label: "4.8/5",
+        icon: <StarIcon size={18} fill="#FFDA67" color="#FFDA67" />,
+      },
+      {
+        id: "2",
+        label: "Hotel",
+        icon: <Image src={HotelVector} />,
+      },
+      {
+        id: "3",
+        label: "12 km from you",
+        icon: <Image src={Location} />,
+      },
+    ],
+  },
+
+  {
+    headLabel: "Excursion",
+    id: "3",
+    type: Requirements.EXCURSIONS,
+    label: "Radisson Hotel",
+    price: "$250/",
+    offers: [
+      {
+        id: "11",
+        label: "Duration",
+        value: "7hrs",
+        icon: <Image src={Clock} />,
+      },
+      {
+        id: "12",
+        label: "Main Element",
+        value: "Air",
+        icon: <Image src={Element} />,
+      },
+      {
+        id: "13",
+        label: "Free Cancelation",
+        value: "24h",
+        icon: <Image src={Dot} />,
+      },
+    ],
+    image: Excursion,
+    stats: [
+      {
+        id: "1",
+        label: "4.8/5",
+        icon: <StarIcon size={18} fill="#FFDA67" color="#FFDA67" />,
+      },
+    ],
+  },
+  {
+    headLabel: "Restaurants",
+    id: "4",
+    type: Requirements.RESTAURANTS,
+    label: "Radisson Hotel",
+    price: "$250/",
+    offers: [
+      {
+        id: "41",
+        label: "Reservations",
+        value: "Yes",
+        icon: <Image src={Reservation} />,
+      },
+      {
+        id: "42",
+        label: "Walk-in",
+        value: "Yes",
+        icon: <Image src={Walking} />,
+      },
+    ],
+    image: Restaurant,
+    stats: [
+      {
+        id: "1",
+        label: "4.8/5",
+        icon: <StarIcon size={18} fill="#FFDA67" color="#FFDA67" />,
+      },
+      {
+        id: "2",
+        label: "24/7",
+        icon: <Image src={Clock} />,
+      },
+    ],
+  },
+];
+
+export const itemData: ItemSelectorCardType[] = [
+  {
+    type: Requirements.CAR,
+    image: CarLg,
+    label: "We picked the best Car for you",
+  },
+  {
+    type: Requirements.FLIGHT,
+    image: FlightLG,
+    label: "We picked the best Flight for you",
   },
 ];

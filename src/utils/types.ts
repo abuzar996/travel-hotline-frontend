@@ -56,6 +56,7 @@ export interface TripEssentialsOffer {
   value: string;
 }
 export interface TripEssentialType {
+  headLabel: string;
   type: Requirements;
   offers: TripEssentialsOffer[];
   stats: TripEssentialsStat[];
@@ -64,3 +65,9 @@ export interface TripEssentialType {
   price: string;
   image: string;
 }
+
+export type ItemSelectorCardType = {
+  type: Requirements;
+  label: string;
+  image: string;
+};

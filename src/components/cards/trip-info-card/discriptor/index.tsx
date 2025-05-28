@@ -13,6 +13,7 @@ const TripDiscriptor = () => {
       align="center"
       gap={10}
       flex={2}
+      className="max-lg:flex-col"
     >
       <Flex vertical gap={5} align="center">
         <Flex>

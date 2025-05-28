@@ -18,6 +18,7 @@ const TripRequirementCard: FC<TripEssentialType> = ({
     <Flex
       flex={1}
       style={{
+        width: "100%",
         padding: token.paddingXS,
         borderRadius: token.borderRadiusLG,
         backgroundColor: "#F5F1FF",
@@ -47,7 +48,7 @@ const TripRequirementCard: FC<TripEssentialType> = ({
         </Flex>
       </Flex>
       <Image src={image} preview={false} style={{ height: 180 }} />
-      <Flex flex={1}>
+      <Flex flex={1} style={{ flexWrap: "wrap", gap: 10 }}>
         {stats.map((item) => (
           <Tag color="#DED2FF" key={item.id}>
             <Flex align="center" gap={10}>

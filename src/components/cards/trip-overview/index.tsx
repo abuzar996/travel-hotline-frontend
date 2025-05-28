@@ -2,7 +2,12 @@ import { Flex, theme } from "antd";
 import DiscoverImage from "src/assets/home-1.png";
 import TripActionCard from "../trip-actions-card";
 import TripInfoCard from "../trip-info-card";
-const TripOverviewCard = () => {
+import type { Dispatch, FC, SetStateAction } from "react";
+import type { ViewType } from "src/utils/types";
+const TripOverviewCard: FC<{
+  activeItem: ViewType;
+  setActiveView: Dispatch<SetStateAction<ViewType>>;
+}> = ({ activeItem, setActiveView }) => {
   const { token } = theme.useToken();
   return (
     <Flex flex={1}>
@@ -22,7 +27,7 @@ const TripOverviewCard = () => {
         justify="space-between"
       >
         <TripActionCard />
-        <TripInfoCard />
+        <TripInfoCard activeItem={activeItem} setActiveView={setActiveView} />
       </Flex>
     </Flex>
   );

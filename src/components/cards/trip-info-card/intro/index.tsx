@@ -12,17 +12,17 @@ const IntroCard = () => {
         padding: token.paddingLG,
       }}
       justify="space-between"
-      align="center"
+      className="max-lg:w-[100%] max-sm:flex-col max-sm:gap-[10px] items-center max-sm:items-start"
     >
       <Flex gap={5}>
         <Flex>
           <Image src={Location} preview={false} height={35} width={35} />
         </Flex>
-        <Flex vertical>
+        <Flex className="flex-col ">
           <Typography
             style={{
-              fontWeight: token.fontWeightStrong,
-              fontSize: token.fontSizeHeading5,
+              fontWeight: "500",
+              fontSize: token.fontSizeHeading4,
             }}
           >
             Thailand

@@ -1,12 +1,15 @@
 import { LayoutOutlined, OrderedListOutlined } from "@ant-design/icons";
 import { ConfigProvider, Flex, theme, Segmented } from "antd";
 import type { SegmentedProps } from "antd";
-import { useState } from "react";
+import type { Dispatch, FC, SetStateAction } from "react";
 import { ViewType } from "src/utils/types";
 
-const ViewSelector = () => {
+const ViewSelector: FC<{
+  activeItem: ViewType;
+  setActiveView: Dispatch<SetStateAction<ViewType>>;
+}> = ({ activeItem, setActiveView }) => {
   const { token } = theme.useToken();
-  const [activeItem, setActiveItem] = useState<ViewType>(ViewType.LIST);
+
   const items: SegmentedProps["options"] = [
     {
       label: activeItem === ViewType.LIST ? "List View" : "",
@@ -34,7 +37,7 @@ const ViewSelector = () => {
         },
       }}
     >
-      <Flex align="center" justify="center">
+      <Flex align="center" justify="center" className="max-lg:w-[100%]">
         <Flex
           align="center"
           justify="center"
@@ -43,12 +46,13 @@ const ViewSelector = () => {
             padding: token.paddingXS,
             borderRadius: token.borderRadiusLG,
           }}
+          className="max-lg:flex-1"
         >
           <Segmented
             options={items}
             size="large"
             value={activeItem}
-            onChange={(value) => setActiveItem(value as ViewType)}
+            onChange={(value) => setActiveView(value as ViewType)}
           />
         </Flex>
       </Flex>
