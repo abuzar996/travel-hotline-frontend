@@ -30,6 +30,7 @@ const NewsLetter = () => {
           style={{
             //color: "#fff",
             fontSize: token.fontSizeHeading5,
+            textAlign: "center",
           }}
         >
           Receive travel updates, exclusive insights, and more.

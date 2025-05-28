@@ -24,8 +24,11 @@ const Card: FC<CardProps> = ({
       align="center"
       className="sm:w-[45%] max-sm:w-[90%] sm:max-md:w-[70%] max-sm:flex-col-reverse max-sm:items-center"
     >
-      <Flex flex={"1"} vertical className="max-sm:items-center">
-        <Typography.Text style={{ fontSize: token.fontSizeHeading2 }}>
+      <Flex flex={"1"} vertical className="max-sm:items-center ">
+        <Typography.Text
+          style={{ fontSize: token.fontSizeHeading2 }}
+          className="max-sm:text-center"
+        >
           {label}
         </Typography.Text>
         <Typography.Text
