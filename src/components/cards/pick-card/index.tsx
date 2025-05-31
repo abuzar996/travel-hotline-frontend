@@ -1,11 +1,15 @@
 import { Flex, theme, Button, Typography, Image } from "antd";
 import type { FC } from "react";
+
 interface PickCardProps {
   label: string;
   image: string;
+  path: string;
+  onViewClick: () => void;
 }
-const PickCard: FC<PickCardProps> = ({ label, image }) => {
+const PickCard: FC<PickCardProps> = ({ label, image, onViewClick }) => {
   const { token } = theme.useToken();
+
   return (
     <Flex
       flex={1}
@@ -35,6 +39,7 @@ const PickCard: FC<PickCardProps> = ({ label, image }) => {
       <Button
         size="large"
         style={{ borderColor: "#FFE07D", backgroundColor: "#FFE07D" }}
+        onClick={onViewClick}
       >
         <Typography.Text
           style={{

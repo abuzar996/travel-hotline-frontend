@@ -4,9 +4,10 @@ import { useCallback, useEffect, useMemo, useState, type FC } from "react";
 import { Requirements, ViewType } from "src/utils/types";
 import TripRequirementCard from "../cards/trip-requirement-card";
 import PickCard from "../cards/pick-card";
+import SeatSelectorModal from "../modals/seat-selector-modal";
 
 const TripEssentials: FC<{ activeView: ViewType }> = ({ activeView }) => {
-  console.log(activeView);
+  const [isModalOpen, toggleModal] = useState<boolean>(false);
   const { token } = theme.useToken();
   const [selectedItem, setSelectedItem] = useState<Requirements>(
     Requirements.FLIGHT
@@ -21,9 +22,17 @@ const TripEssentials: FC<{ activeView: ViewType }> = ({ activeView }) => {
   const itemToShow = useMemo(() => {
     return itemData.find((item) => item.type === selectedItem);
   }, [selectedItem]);
+
+  const switchModal = useCallback(() => {
+    toggleModal((isOpen) => !isOpen);
+  }, []);
+
   useEffect(() => {}, [selectedItem]);
   return (
     <Flex gap={10} flex="1" className="max-lg:flex-col max-lg:gap-[10px]">
+      {isModalOpen && (
+        <SeatSelectorModal isOpen={isModalOpen} switchModal={switchModal} />
+      )}
       <Flex
         className="w-[20%] max-lg:w-[100%]"
         style={{ display: activeView === ViewType.TAB ? "flex" : "none" }}
@@ -86,12 +95,23 @@ const TripEssentials: FC<{ activeView: ViewType }> = ({ activeView }) => {
               gap={10}
               className="max-lg:flex-col"
             >
-              <TripRequirementCard {...cardData} />
+              <Flex flex={2}>
+                <TripRequirementCard {...cardData} />
+              </Flex>
               {selectedItem === Requirements.CAR ||
               selectedItem === Requirements.FLIGHT ? (
-                <PickCard label={itemToShow!.label} image={itemToShow!.image} />
+                <Flex flex={1} style={{ height: "100%" }}>
+                  <PickCard
+                    label={itemToShow!.label}
+                    image={itemToShow!.image}
+                    path={"/car-details"}
+                    onViewClick={switchModal}
+                  />
+                </Flex>
               ) : (
-                <TripRequirementCard {...cardData} />
+                <Flex flex={2}>
+                  <TripRequirementCard {...cardData} />
+                </Flex>
               )}
 
               {/*  */}
@@ -142,16 +162,24 @@ const TripEssentials: FC<{ activeView: ViewType }> = ({ activeView }) => {
                 gap={10}
                 className="max-lg:flex-col"
               >
-                <TripRequirementCard {...item} />
+                <Flex flex={2}>
+                  <TripRequirementCard {...item} />
+                </Flex>
 
                 {item.type === Requirements.CAR ||
                 item.type === Requirements.FLIGHT ? (
-                  <PickCard
-                    label={itemToShow!.label}
-                    image={itemToShow!.image}
-                  />
+                  <Flex flex={1} style={{ height: "100%" }}>
+                    <PickCard
+                      label={itemToShow!.label}
+                      image={itemToShow!.image}
+                      path={"/car-details"}
+                      onViewClick={switchModal}
+                    />
+                  </Flex>
                 ) : (
-                  <TripRequirementCard {...item} />
+                  <Flex flex={2}>
+                    <TripRequirementCard {...item} />
+                  </Flex>
                 )}
 
                 {/*  */}

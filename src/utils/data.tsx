@@ -1,4 +1,10 @@
-import type { ImageViewType, ItemType, TripOption } from "./types";
+import {
+  PlaneSeatStatus,
+  type ImageViewType,
+  type ItemType,
+  type PlaneSeatDataType,
+  type TripOption,
+} from "./types";
 import {
   HomeOutlined,
   HistoryOutlined,
@@ -137,5 +143,26 @@ export const tripData: TripOption[] = [
         image: HomeImage4,
       },
     ],
+  },
+];
+
+export const planeSeatsData: PlaneSeatDataType[] = [
+  {
+    id: "1",
+    status: PlaneSeatStatus.AVAILABLE,
+    color: "#FFFFFF",
+    text: "#757575",
+  },
+  {
+    id: "2",
+    status: PlaneSeatStatus.SELECTED,
+    color: "#3D2482",
+    text: "#FFFFFF",
+  },
+  {
+    id: "3",
+    status: PlaneSeatStatus.NOT_AVAILABLE,
+    color: "#757575",
+    text: "#FFFFFF",
   },
 ];

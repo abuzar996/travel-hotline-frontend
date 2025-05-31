@@ -12,6 +12,13 @@ const Config: FC<ConfigProps> = ({ children }) => {
           fontFamily: "Poppins",
         },
         components: {
+          Modal: {
+            colorBgContainer: "#F5F1FF",
+            contentBg: "#F5F1FF",
+            // paddingLG: 0,
+            //padding: 0,
+          },
+
           Divider: {
             margin: 0,
             verticalMarginInline: 0,

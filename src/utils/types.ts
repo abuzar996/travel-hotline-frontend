@@ -71,3 +71,16 @@ export type ItemSelectorCardType = {
   label: string;
   image: string;
 };
+
+export enum PlaneSeatStatus {
+  AVAILABLE = "Available",
+  SELECTED = "Selected",
+  NOT_AVAILABLE = "Not Available",
+}
+
+export interface PlaneSeatDataType {
+  status: PlaneSeatStatus;
+  id: string;
+  color: string;
+  text: string;
+}
