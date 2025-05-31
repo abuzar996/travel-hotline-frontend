@@ -5,7 +5,7 @@ import FlightRoute from "src/assets/flight-route.png";
 import Seat from "src/assets/vectors/seat.svg";
 
 import Item from "src/assets/vectors/item.svg";
-import Users from "src/assets/vectors/users.svg";
+//import Users from "src/assets/vectors/users.svg";
 
 import Plane from "src/assets/vectors/plane.svg";
 import Bag from "src/assets/vectors/bag.svg";

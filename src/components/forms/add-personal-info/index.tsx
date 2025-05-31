@@ -34,17 +34,17 @@ const PersonalInfoForm = () => {
 
   const {
     control,
-    handleSubmit,
+    //   handleSubmit,
     formState: { errors },
 
-    watch,
+    //    watch,
   } = useForm<PersonalInfoFormType>({
     mode: "onSubmit",
     resolver: zodResolver(personalInfoSchema),
   });
   //const navigate=useNavigate()
-  const watcher = watch();
-  const onSubmit = (data: PersonalInfoFormType) => {};
+  //const watcher = watch();
+  //const onSubmit = (data: PersonalInfoFormType) => {};
   const onButtonClick = () => {
     navigate("/flight-details");
   };

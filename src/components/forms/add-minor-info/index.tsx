@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import {
   Flex,
   Input,
@@ -13,7 +13,7 @@ import { useForm, Controller } from "react-hook-form";
 import { type MinorInfoFormType, minorInfoSchema } from "./schema";
 import "react-phone-input-2/lib/style.css";
 
-import type { CheckboxChangeEvent, CheckboxGroupProps } from "antd/es/checkbox";
+import type { CheckboxGroupProps } from "antd/es/checkbox";
 
 const genderOptions: CheckboxGroupProps<string>["options"] = [
   { label: "Male", value: "male" },
@@ -23,26 +23,26 @@ const genderOptions: CheckboxGroupProps<string>["options"] = [
 const MinorInfoForm = () => {
   const { token } = theme.useToken();
 
-  const [checked, setChecked] = useState(false);
+  // const [checked, setChecked] = useState(false);
 
-  const onChange = (e: CheckboxChangeEvent) => {
-    setChecked(e.target.checked);
-  };
+  // const onChange = (e: CheckboxChangeEvent) => {
+  // setChecked(e.target.checked);
+  // };
 
   const {
     control,
-    handleSubmit,
+    // handleSubmit,
     formState: { errors },
 
-    watch,
+    // watch,
   } = useForm<MinorInfoFormType>({
     mode: "onSubmit",
     resolver: zodResolver(minorInfoSchema),
   });
-  const watcher = watch();
-  const onSubmit = (data: MinorInfoFormType) => {
-    console.log("hello");
-  };
+  // const watcher = watch();
+  // const onSubmit = (data: MinorInfoFormType) => {
+  //   console.log("hello");
+  // };
   console.log(errors);
   return (
     <Flex
@@ -180,7 +180,7 @@ const MinorInfoForm = () => {
               width: "40%",
             }}
             htmlType="submit"
-            onClick={handleSubmit(onSubmit)}
+            // onClick={handleSubmit()}
           >
             Continue
           </Button>
