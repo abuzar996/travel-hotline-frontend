@@ -5,7 +5,7 @@ const Counters = () => {
   const [adultCount, setAdultCount] = useState<number>(0);
   const [childrenCount, setchildrenCount] = useState<number>(0);
   return (
-    <Flex flex={1} vertical gap={10}>
+    <Flex flex={1} vertical gap={0}>
       <Typography.Text style={{ color: "#757575", fontSize: 15 }}>
         Guests
       </Typography.Text>

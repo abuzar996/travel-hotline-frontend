@@ -11,7 +11,7 @@ const FilterItem: FC<FilterItemProps> = ({ label, checked }) => {
       flex={1}
       align="center"
       justify="space-between"
-      style={{ padding: token.paddingXS }}
+      style={{ paddingInline: token.paddingXS }}
     >
       <Typography.Text>{label}</Typography.Text>
       <Checkbox checked={checked} />

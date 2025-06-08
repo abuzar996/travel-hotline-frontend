@@ -7,11 +7,13 @@ interface ViewWrapperProps {
   navChild: React.ReactNode;
   children: React.ReactNode;
   optionSelector: React.ReactNode;
+  mainLabel: string;
 }
 const ViewWrapper: FC<ViewWrapperProps> = ({
   navChild,
   children,
   optionSelector,
+  mainLabel,
 }) => {
   const { token } = theme.useToken();
   const WrapperRef = useRef<HTMLDivElement>(null);
@@ -31,7 +33,7 @@ const ViewWrapper: FC<ViewWrapperProps> = ({
       className="select-none"
     >
       <Flex ref={WrapperRef}>
-        <WrapperNav label="Select your Departure Flight">{navChild}</WrapperNav>
+        <WrapperNav label={mainLabel}>{navChild}</WrapperNav>
       </Flex>
       {height > 0 ? (
         <Flex

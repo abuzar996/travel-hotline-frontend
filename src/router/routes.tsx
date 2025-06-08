@@ -21,13 +21,16 @@ const TripInfo = lazy(() => import("src/pages/trip-info"));
 const ViewFlights = lazy(
   () => import("src/pages/trip-info/sub-views/view-flights")
 );
+const ViewStays = lazy(
+  () => import("src/pages/trip-info/sub-views/view-stays")
+);
 const CurrentTrips = lazy(() => import("src/pages/history/sub-views/current"));
 const PastTrips = lazy(() => import("src/pages/history/sub-views/past"));
 const UpcomingTrips = lazy(
   () => import("src/pages/history/sub-views/upcoming")
 );
 // import Cars from "src/pages/cars";
-const Cars = lazy(() => import("src/pages/cars"));
+const ViewCars = lazy(() => import("src/pages/trip-info/sub-views/view-cars"));
 const SavedTrips = lazy(() => import("src/pages/history/sub-views/saved"));
 export const routes: RouteObject[] = [
   {
@@ -134,7 +137,7 @@ export const routes: RouteObject[] = [
                 path: "cars",
                 element: (
                   <Suspense fallback={<Loader />}>
-                    <Cars />
+                    <ViewCars />
                   </Suspense>
                 ),
               },
@@ -143,6 +146,14 @@ export const routes: RouteObject[] = [
                 element: (
                   <Suspense fallback={<Loader />}>
                     <ViewFlights />
+                  </Suspense>
+                ),
+              },
+              {
+                path: "stays",
+                element: (
+                  <Suspense fallback={<Loader />}>
+                    <ViewStays />
                   </Suspense>
                 ),
               },
