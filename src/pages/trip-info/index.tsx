@@ -20,6 +20,7 @@ const TripInfo = () => {
         gap={20}
       >
         <TripOverviewCard
+          interactive={true}
           activeItem={activeView}
           setActiveView={setActiveView}
         />

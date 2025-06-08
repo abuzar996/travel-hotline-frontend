@@ -5,6 +5,7 @@ import CarImg from "src/assets/car-img.png";
 import type { FC } from "react";
 import { Requirements, type TripEssentialType } from "src/utils/types";
 import Route from "src/assets/route.png";
+import { useNavigate } from "react-router-dom";
 
 const TripRequirementCard: FC<TripEssentialType> = ({
   label,
@@ -15,7 +16,7 @@ const TripRequirementCard: FC<TripEssentialType> = ({
   type,
 }) => {
   const { token } = theme.useToken();
-
+  const navigate = useNavigate();
   return (
     <Flex
       flex={1}
@@ -167,6 +168,9 @@ const TripRequirementCard: FC<TripEssentialType> = ({
       <Button
         style={{ borderColor: "#3D2482", backgroundColor: "#3D2482" }}
         size="large"
+        onClick={() => {
+          navigate("cars");
+        }}
       >
         <Typography.Text
           style={{

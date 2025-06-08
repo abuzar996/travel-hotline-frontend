@@ -84,3 +84,41 @@ export interface PlaneSeatDataType {
   color: string;
   text: string;
 }
+
+export interface SidebarItemType {
+  id: string;
+  active: boolean;
+  label: string;
+  route: string;
+}
+
+export interface TripInfoItemType {
+  id: string;
+  label: string;
+  icon: string;
+  value: string;
+  style: React.CSSProperties;
+}
+
+export enum ItineraryStatus {
+  CONFIRMED = "Confirmed",
+  BOOKED = "Booked",
+  PLANNED = "Planned",
+}
+export interface UpcomingTripItemType {
+  id: string;
+  address: string;
+  label: string;
+  image: string;
+  city: string;
+}
+
+export interface SurveyItemOptiontype {
+  id: string;
+  value: string;
+}
+export interface SurveyItemType {
+  id: string;
+  label: string;
+  options: SurveyItemOptiontype[];
+}

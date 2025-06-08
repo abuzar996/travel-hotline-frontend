@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 interface FormWrapperProps {
   children: ReactNode;
   label: string;
-  description: string;
+  description?: string;
 }
 const FormWrapper: FC<FormWrapperProps> = ({
   children,

@@ -4,17 +4,23 @@ import TripActionCard from "../trip-actions-card";
 import TripInfoCard from "../trip-info-card";
 import type { Dispatch, FC, SetStateAction } from "react";
 import type { ViewType } from "src/utils/types";
-const TripOverviewCard: FC<{
-  activeItem: ViewType;
-  setActiveView: Dispatch<SetStateAction<ViewType>>;
-}> = ({ activeItem, setActiveView }) => {
+const TripOverviewCard: FC<
+  | {
+      interactive: true;
+      activeItem: ViewType;
+      setActiveView: Dispatch<SetStateAction<ViewType>>;
+    }
+  | { interactive: false }
+> = (props) => {
   const { token } = theme.useToken();
   return (
     <Flex flex={1}>
       <Flex
         style={{
           width: "100%", // Ensure full width
-          height: window.innerHeight / 2.5,
+          height: props.interactive
+            ? window.innerHeight / 2.5
+            : window.innerHeight / 3.5,
           borderRadius: token.borderRadiusLG * 2,
           padding: token.paddingSM,
           backgroundImage: `url(${DiscoverImage})`,
@@ -24,10 +30,18 @@ const TripOverviewCard: FC<{
         }}
         flex="1"
         vertical
-        justify="space-between"
+        justify={props.interactive ? "space-between" : "flex-end"}
       >
-        <TripActionCard />
-        <TripInfoCard activeItem={activeItem} setActiveView={setActiveView} />
+        {props.interactive === true && <TripActionCard />}
+
+        {props.interactive == true ? (
+          <TripInfoCard
+            activeItem={props.activeItem}
+            setActiveView={props.setActiveView}
+          />
+        ) : (
+          <TripInfoCard />
+        )}
       </Flex>
     </Flex>
   );

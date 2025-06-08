@@ -5,12 +5,7 @@ import {
   type PlaneSeatDataType,
   type TripOption,
 } from "./types";
-import {
-  HomeOutlined,
-  HistoryOutlined,
-  TeamOutlined,
-  GlobalOutlined,
-} from "@ant-design/icons";
+import { HomeOutlined, HistoryOutlined, TeamOutlined } from "@ant-design/icons";
 import HomeImage1 from "src/assets/home-4.png";
 import HomeImage2 from "src/assets/home-3.png";
 import HomeImage3 from "src/assets/home-2.png";
@@ -22,13 +17,6 @@ export const navItems: ItemType[] = [
     active: true,
     icon: <HomeOutlined />,
     route: "/home",
-  },
-  {
-    label: "BUILD A TRIP",
-    id: "2",
-    active: false,
-    icon: <GlobalOutlined />,
-    route: "/build-my-trip",
   },
   {
     label: "MY TRIPS",
@@ -47,9 +35,9 @@ export const navItems: ItemType[] = [
 ];
 
 export const homeData: ImageViewType[] = [
-  { value: HomeImage1, id: "1" },
-  { value: HomeImage2, id: "2" },
-  { value: HomeImage3, id: "3" },
+  // { value: HomeImage1, id: "1" },
+  // { value: HomeImage2, id: "2" },
+  // { value: HomeImage3, id: "3" },
   { value: HomeImage4, id: "4" },
 ];
 

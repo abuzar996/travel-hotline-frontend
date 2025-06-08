@@ -23,12 +23,6 @@ const genderOptions: CheckboxGroupProps<string>["options"] = [
 const MinorInfoForm = () => {
   const { token } = theme.useToken();
 
-  // const [checked, setChecked] = useState(false);
-
-  // const onChange = (e: CheckboxChangeEvent) => {
-  // setChecked(e.target.checked);
-  // };
-
   const {
     control,
     // handleSubmit,
@@ -39,10 +33,7 @@ const MinorInfoForm = () => {
     mode: "onSubmit",
     resolver: zodResolver(minorInfoSchema),
   });
-  // const watcher = watch();
-  // const onSubmit = (data: MinorInfoFormType) => {
-  //   console.log("hello");
-  // };
+
   console.log(errors);
   return (
     <Flex

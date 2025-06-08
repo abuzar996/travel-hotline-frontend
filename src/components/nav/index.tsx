@@ -59,7 +59,7 @@ const Navbar = () => {
         justify="space-between"
         align="center"
       >
-        <Image src={Logo} width={60} height={50} />
+        <Image src={Logo} width={60} height={50} preview={false} />
         <Flex flex={"1"} justify="center" gap={40} className="max-sm:hidden">
           {menuItems.map((item) => (
             <NavItem

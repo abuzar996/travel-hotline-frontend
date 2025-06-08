@@ -9,6 +9,7 @@ const NavItem: React.FC<
   const handleItemClick = useCallback(() => {
     handleItemSelect(id);
   }, [id]);
+
   return (
     <Flex
       gap={10}

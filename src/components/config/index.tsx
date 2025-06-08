@@ -18,7 +18,9 @@ const Config: FC<ConfigProps> = ({ children }) => {
             // paddingLG: 0,
             //padding: 0,
           },
-
+          Checkbox: {
+            controlInteractiveSize: 26,
+          },
           Divider: {
             margin: 0,
             verticalMarginInline: 0,
@@ -27,6 +29,7 @@ const Config: FC<ConfigProps> = ({ children }) => {
             textPaddingInline: 0,
             orientationMargin: 12,
           },
+          Progress: { defaultColor: "#3D2482", remainingColor: "#DED2FF" },
         },
       }}
     >

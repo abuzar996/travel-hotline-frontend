@@ -1,10 +1,10 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import { Flex } from "antd";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import Navbar from "src/components/nav";
 import Config from "src/components/config";
 
-const AppLayout = () => {
+const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number>(0);
 
@@ -31,7 +31,7 @@ const AppLayout = () => {
             }}
             className="scroll-hidden "
           >
-            <Outlet />
+            {children}
           </div>
         )}
       </Flex>

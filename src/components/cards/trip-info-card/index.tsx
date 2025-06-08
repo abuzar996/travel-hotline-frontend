@@ -5,8 +5,8 @@ import TripDiscriptor from "./discriptor";
 import type { Dispatch, FC, SetStateAction } from "react";
 import type { ViewType } from "src/utils/types";
 const TripInfoCard: FC<{
-  activeItem: ViewType;
-  setActiveView: Dispatch<SetStateAction<ViewType>>;
+  activeItem?: ViewType;
+  setActiveView?: Dispatch<SetStateAction<ViewType>>;
 }> = ({ activeItem, setActiveView }) => {
   const { token } = theme.useToken();
   return (
@@ -22,7 +22,9 @@ const TripInfoCard: FC<{
       className="max-lg:flex-col overflow-y-scroll scroll-hidden"
     >
       <IntroCard />
-      <ViewSelector activeItem={activeItem} setActiveView={setActiveView} />
+      {activeItem && setActiveView && (
+        <ViewSelector activeItem={activeItem} setActiveView={setActiveView!} />
+      )}
       <TripDiscriptor />
     </Flex>
   );

@@ -1,13 +1,25 @@
 import { Carousel, Typography, Flex, theme, Button } from "antd";
 import { homeData } from "src/utils/data";
 import "@fontsource/qwitcher-grypen/400.css";
+import { useCallback, useState } from "react";
+import SurveyModal from "src/components/modals/survey-modal";
 const CustomCarousal = () => {
+  const [isModalOpen, togleModal] = useState<boolean>(false);
   const { token } = theme.useToken();
+  const handleCompleteProfileClick = useCallback(() => {
+    togleModal((isOpen) => !isOpen);
+  }, []);
   return (
     <div
       style={{ width: "100%", overflow: "hidden", position: "relative" }}
       className="select-none"
     >
+      {isModalOpen && (
+        <SurveyModal
+          isOpen={isModalOpen}
+          togleOpen={handleCompleteProfileClick}
+        />
+      )}
       <Carousel autoplay autoplaySpeed={3000} dots={false}>
         {homeData.map((item) => (
           <div key={item.id}>
@@ -103,7 +115,7 @@ const CustomCarousal = () => {
               padding: token.paddingMD,
               zIndex: 1000,
             }}
-            onClick={() => alert("hello")}
+            onClick={handleCompleteProfileClick}
           >
             <Typography.Text
               style={{

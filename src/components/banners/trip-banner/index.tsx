@@ -9,7 +9,7 @@ const TripBanner: FC<TripOption> = ({ name, list }) => {
   const navigate = useNavigate();
   const handleItemClick = useCallback(
     (id: string) => {
-      navigate(`/trip-info/${id}`);
+      navigate(`/discover/trip-info/${id}`);
     },
     [navigate]
   );
